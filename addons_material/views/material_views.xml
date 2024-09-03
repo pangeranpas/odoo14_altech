@@ -1,0 +1,54 @@
+<odoo>
+    <record id="view_material_form" model="ir.ui.view">
+        <field name="name">material.form</field>
+        <field name="model">material</field>
+        <field name="arch" type="xml">
+            <form string="Material">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="buy_price"/>
+                        <field name="supplier_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_material_tree" model="ir.ui.view">
+        <field name="name">material.tree</field>
+        <field name="model">material</field>
+        <field name="arch" type="xml">
+            <tree string="Materials">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="buy_price"/>
+                <field name="supplier_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_material_search" model="ir.ui.view">
+        <field name="name">material.search</field>
+        <field name="model">material</field>
+        <field name="arch" type="xml">
+            <search string="Search Materials">
+                <field name="name"/>
+                <field name="type"/>
+                <group expand="0" string="Group By">
+                    <filter string="Material Type" name="type" context="{'group_by': 'type'}"></filter>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_material_list" model="ir.actions.act_window">
+        <field name="name">Materials</field>
+        <field name="res_model">material</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_material_tree"/>
+    </record>
+</odoo>
