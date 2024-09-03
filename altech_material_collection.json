@@ -1,0 +1,86 @@
+{
+    "info": {
+        "_postman_id": "abcd1234-5678-90ab-cdef-1234567890ab",
+        "name": "Material API",
+        "description": "API for managing materials",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "List Materials",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8069/materials",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8069",
+                    "path": [
+                        "materials"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Material",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"code\": \"MAT003\", \"name\": \"Updated Material\", \"type\": \"cotton\", \"buy_price\": 120}"
+                },
+                "url": {
+                    "raw": "http://localhost:8069/materials/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8069",
+                    "path": [
+                        "materials",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Material",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8069/materials/1/delete",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8069",
+                    "path": [
+                        "materials",
+                        "1",
+                        "delete"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
