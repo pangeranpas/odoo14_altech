@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="email_template_pos_receipt" model="mail.template">
+        <field name="name">POS Receipt</field>
+        <field name="email_from">${(user.email_formatted or 'noreply@example.com')|safe}</field>
+        <field name="subject">Your POS Order Receipt</field>
+        <field name="email_to">${object.partner_id.email|safe}</field>
+        <field name="body_html">
+            <![CDATA[
+            <p>Hello ${object.partner_id.name},</p>
+            <p>Here is your receipt for the order ${object.name}.</p>
+            <p>Thank you!</p>
+            ]]>
+        </field>
+        <field name="model_id" ref="point_of_sale.model_pos_order"/>
+    </record>
+</odoo>

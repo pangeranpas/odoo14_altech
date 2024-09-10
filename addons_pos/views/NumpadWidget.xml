@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Add this to your POS XML file -->
+<template id="assets" inherit_id="point_of_sale.assets">
+    <xpath expr="." position="inside">
+        <script type="text/javascript" src="/addons_pos/static/src/js/NumpadWidget.js"></script>
+    </xpath>
+</template>
+
+<template id="pos_discount_button" inherit_id="point_of_sale.pos">
+    <xpath expr="//button[@data-mode='discount']" position="attributes">
+        <attribute name="attrs">{'invisible': [('your_condition', '=', True)]}</attribute>
+    </xpath>
+</template>
