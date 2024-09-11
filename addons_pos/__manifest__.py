@@ -5,13 +5,16 @@
     'description': 'Addon test teknikal',
     'author': 'Pangeran Christian',
     'website': 'pangeran.ian@gmail.com',
-    'depends': ['point_of_sale','mail'],
+    'depends': ['web','point_of_sale','mail'],
     'data': [
         'views/NumpadWidget.xml',
         'views/NumberBuffer.xml',
         'views/PaymentScreenTourMethods.xml',
         'data/email_templates.xml',
     ],
+    'qweb': [
+        'static/src/xml/char_widget_templates.xml',
+        ],
     'assets': {
         'point_of_sale.assets': [
             'addons_pos/static/src/js/NumpadWidget.js',
