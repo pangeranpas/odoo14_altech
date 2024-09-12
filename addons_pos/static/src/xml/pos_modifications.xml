@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="PaymentScreen">
+        <t t-jquery=".payment-buttons" t-operation="after">
+            <div class="email-sent-message" t-if="widget.pos.get_order().get_client() and widget.pos.get_order().get_client().email">
+                Email sudah dikirim / Email sent
+            </div>
+        </t>
+    </t>
+</templates>

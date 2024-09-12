@@ -8,18 +8,16 @@
     'depends': ['web','point_of_sale','mail'],
     'data': [
         'views/NumpadWidget.xml',
-        'views/NumberBuffer.xml',
-        'views/PaymentScreenTourMethods.xml',
         'data/email_templates.xml',
+        'views/pos_templates.xml',
     ],
     'qweb': [
-        'static/src/xml/char_widget_templates.xml',
+        'static/src/xml/pos_modifications.xml',
         ],
     'assets': {
         'point_of_sale.assets': [
             'addons_pos/static/src/js/NumpadWidget.js',
-            'addons_pos/static/src/js/NumberBuffer.js',
-            'addons_pos/static/src/js/PaymentScreenTourMethods.js',
+            'addons_pos/static/src/js/pos_modifications.js',
         ],
     },
     'installable': True,
